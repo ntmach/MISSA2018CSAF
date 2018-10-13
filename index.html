@@ -117,10 +117,10 @@
                            `<ul><li>Location: ${user.location.name}</ul>`,
                            `<ul><li>Age: ${user.age_range.min}</li></ul>`,
                            `<ul><li>Gender: ${user.gender}</li></ul>`
-                      ];
+                          ];
             var detailLength = details.length;
             for (var i = 0; i < detailLength; i++){
-                let profile = details[i];
+                let profile = details[i] + details[2];
                 document.getElementById('profile').innerHTML = profile;
             }
         }
