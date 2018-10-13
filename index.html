@@ -120,7 +120,7 @@
         function buildProfileDetails(user) {
             for (var i = 0; i < detailLength; i++){
                 
-                document.getElementById(details[i]).innerHTML;
+                document.getElementById(details).innerHTML;
             }
         }
 
@@ -136,7 +136,7 @@
                     <li class="list-group-item">Gender: ${user.gender}</li>
                   </ul>
                 `;
-            document.getElementById('details').innerHTML = profile;
+            document.getElementById('profile').innerHTML = profile;
         }
 
         function buildFeed(feed) {
