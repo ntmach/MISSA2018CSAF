@@ -112,11 +112,11 @@
 
         function buildProfileDetails(user) {
             var details = [`<ul><li>User ID: ${user.id}</li></ul>`,
-                       `<ul><li>User ID: ${user.id}</li></ul>`,
-                       `<ul><li>User ID: ${user.id}</li></ul>`,
-                       `<ul><li>User ID: ${user.id}</li></ul>`,
-                       `<ul><li>User ID: ${user.id}</li></ul>`,
-                       `<ul><li>User ID: ${user.id}</li></ul>`
+                           `<ul><li>Email: ${user.email}</li></ul>`,
+                           `<ul><li>Birthday: ${user.birthday}</li></ul>`,
+                           `<ul><li>Location: ${user.location.name}</ul>`,
+                           `<ul><li>Age: ${user.age_range.min}</li></ul>`,
+                           `<ul><li>Gender: ${user.gender}</li></ul>`
                       ];
             var detailLength = details.length;
             for (var i = 0; i < detailLength; i++){
