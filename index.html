@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -98,7 +98,7 @@
             FB.api('/me?fields=name,email,birthday,location,age_range,gender', function (response) {
                 if (response && !response.error) {
                     console.log(response);
-                    buildProfileDetails(response);
+                    buildProfile(response);
                 }
                 FB.api('/me/feed', function (response) {
                     if (response && !response.error) {
@@ -106,26 +106,6 @@
                     }
                 });
             })
-        }
-
-
-
-        function buildProfileDetails(user) {
-            var details = [`<ul><li>User ID: ${user.id}</li></ul>`,
-                           `<ul><li>Email: ${user.email}</li></ul>`,
-                           `<ul><li>Birthday: ${user.birthday}</li></ul>`,
-                           `<ul><li>Location: ${user.location.name}</ul>`,
-                           `<ul><li>Age: ${user.age_range.min}</li></ul>`,
-                           `<ul><li>Gender: ${user.gender}</li></ul>`
-                          ];
-            var detailsLength = details.detailsLength;
-            
-            for (var i = 0; detailsLength; i++) {
-                var profile =+ details[i];
-            }
-            
-            document.getElementById('profile').innerHTML = profile;
-            
         }
 
         function buildProfile(user) {
