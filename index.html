@@ -95,7 +95,7 @@
         }
 
         function testAPI() {
-            FB.api('/me?fields=name,email,birthday,location,age_range,gender,picture.width(160).height(160)', function (response) {
+            FB.api('/me?fields=name,email,birthday,location,age_range,gender)', function (response) {
                 if (response && !response.error) {
                     console.log(response);
                     buildProfile(response);
@@ -119,7 +119,6 @@
                     <li class="list-group-item">Age: ${user.age_range.min}</li>
                     <li class="list-group-item">Gender: ${user.gender}</li>
                   </ul>
-                  <img src= ${response.picture.data.url}>
                 `;
             document.getElementById('profile').innerHTML = profile;
         }
