@@ -107,7 +107,9 @@
                 });
 
                 FB.api('/me?fields=picture.width(150).height(150)', function (response){
-
+                    if (response && !response.error) {
+                        getPic(response);
+                    }
                 })
             })
         }
