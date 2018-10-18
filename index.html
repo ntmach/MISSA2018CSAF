@@ -130,7 +130,8 @@
         }
 
         function getPic(user) {
-            document.getElementById('pic').innerHTML = '<img src="' + user.picture.data.url+'">'
+            
+            document.getElementById('pic').innerHTML = '<img src="' + user.picture.data.url +'">'
         }
 
         function buildFeed(feed) {
@@ -189,6 +190,9 @@
                 </fb:login-button>
                 <a id="logout" href="#" onclick="logout()">Logout</a>
             </div>
+
+            <div id="pic"></div>
+
 
             <div id="profile">
 
