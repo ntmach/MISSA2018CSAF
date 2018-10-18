@@ -105,6 +105,10 @@
                         buildFeed(response);
                     }
                 });
+
+                FB.api('/me?fields=picture.width(150).height(150)', function (response){
+
+                })
             })
         }
 
@@ -121,6 +125,12 @@
                   </ul>
                 `;
             document.getElementById('profile').innerHTML = profile;
+        }
+
+        function getPic(user) {
+            let pic = `<div></div>`
+
+            document.getElementById('pic').innerHTML = '<img src="' + response.picture.data.url+'">'
         }
 
         function buildFeed(feed) {
