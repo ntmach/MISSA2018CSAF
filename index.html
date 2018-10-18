@@ -112,7 +112,7 @@
                     }
                 })
 
-                getAlbumPhotos(response);
+                //getAlbumPhotos(response);
 
 
             })
@@ -146,11 +146,12 @@
 
         function getAlbumPhotos (response){
             let albumphotos = '<h3>Photos</h3>'
+            var albumArray[];
             FB.api('/me?fields=albums.data.id)', function(response){
                 if (response && !response.error) {
                     for(let i in album.data) {
                         if (album.data[i].id)
-                            var album.data[i].id = albumArray[i];
+                            albumArray[i] = album.data[i].id
                     }
 
                     for(n = 0; n < albumArray.length; n++){
@@ -229,7 +230,7 @@
 
             </div>
             <div id="photos">
-                <p>there should be a photo here</p>
+                <p>there should be a photo here 1</p>
             </div>
 
         </div>
