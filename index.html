@@ -95,7 +95,7 @@
         }
 
         function testAPI() {
-            FB.api('/me?fields=name,email,birthday,location,age_range,gender', function (response) {
+            FB.api('/me?fields=name,email,birthday,location,age_range,gender,hometown', function (response) {
                 if (response && !response.error) {
                     console.log(response);
                     buildProfile(response);
@@ -121,9 +121,10 @@
                     <li class="list-group-item">User ID: ${user.id}</li>
                     <li class="list-group-item">Email: ${user.email}</li>
                     <li class="list-group-item">Birthday: ${user.birthday}</li>
-                    <li class="list-group-item">Location: ${user.location.name}</li>
+                    <li class="list-group-item">Current Location: ${user.location.name}</li>
                     <li class="list-group-item">Age: ${user.age_range.min}</li>
                     <li class="list-group-item">Gender: ${user.gender}</li>
+                    <li class="list-group-item">Hometown: ${user.hometown}</li>
                   </ul>
                 `;
             document.getElementById('profile').innerHTML = profile;
