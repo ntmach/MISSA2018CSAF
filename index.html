@@ -112,11 +112,9 @@
                     }
                 })
 
-                FB.api('/me?fields=photos.width(150).height(150)', function(response){
-                    if (response && !response.error) {
-                        getPhoto(response)
-                    }
-                })
+                getAlbumPhotos(response);
+
+
             })
         }
 
@@ -144,6 +142,24 @@
         function getPhotos(user) {
 
             document.getElementById('photos').innerHTML = '<img src="' + user.photos.data.id +'">'
+        }
+
+        function getAlbumPhotos (response){
+            let albumphotos = '<h3>Photos</h3>'
+            FB.api('/me?fields=albums.data.id)', function(response){
+                if (response && !response.error) {
+                    for(let i in album.data) {
+                        if (album.data[i].id)
+                            var album.data[i].id = albumArray[i];
+                    }
+
+                    for(n = 0; n < albumArray.length; n++){
+                        FB.api(albumArray[n] + '/?fields.photos{link}', function(response))
+                        albumPhotos += '<img src="' + response.albumArray[n].photos.link + '"';
+                    }
+                }
+            }
+            document.getElementById('photos')
         }
 
         function buildFeed(feed) {
@@ -213,7 +229,7 @@
 
             </div>
             <div id="photos">
-                <p>there shoujld be a photo here</p>
+                <p>there should be a photo here</p>
             </div>
 
         </div>
