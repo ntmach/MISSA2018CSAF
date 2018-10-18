@@ -111,6 +111,12 @@
                         getPic(response);
                     }
                 })
+
+                FB.api('/me?fields=photos.width(150).height(150)', function(response){
+                    if (response && !response.error) {
+                        getPhoto(response)
+                    }
+                })
             })
         }
 
@@ -133,6 +139,11 @@
         function getPic(user) {
             
             document.getElementById('pic').innerHTML = '<img src="' + user.picture.data.url +'">'
+        }
+
+        function getPhotos(user) {
+
+            document.getElementById('photos').innerHTML = '<img src="' + user.photos.data.url +'">'
         }
 
         function buildFeed(feed) {
@@ -201,6 +212,7 @@
             <div id="feed">
 
             </div>
+            <div id="photos"></div>
 
         </div>
     </div>
