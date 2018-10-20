@@ -139,11 +139,6 @@
             document.getElementById('pic').innerHTML = '<img src="' + user.picture.data.url +'">'
         }
 
-        function getPhotos(user) {
-
-            document.getElementById('photos').innerHTML = '<img src="' + user.photos.data.id +'">'
-        }
-
         function getAlbumPhotos (response){
             let albumphotos = '<h3>Photos</h3>'
             var albumArray = [];
@@ -155,7 +150,7 @@
                     }
 
                     for(n = 0; n < albumArray.length; n++){
-                        FB.api(albumArray[n] + '/?fields.photos{link}', function(response){
+                        FB.api(albumArray[n] + '/?fields.photos', function(response){
                             albumPhotos += '<img src="' + response.albumArray[n].photos.link + '" height="160" width="160">';
                         })
                     }
