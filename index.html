@@ -155,8 +155,9 @@
                     }
 
                     for(n = 0; n < albumArray.length; n++){
-                        FB.api(albumArray[n] + '/?fields.photos{link}', function(response))
-                        albumPhotos += '<img src="' + response.albumArray[n].photos.link + '"';
+                        FB.api(albumArray[n] + '/?fields.photos{link}', function(response)){
+                            albumPhotos += '<img src="' + response.albumArray[n].photos.link + '"';
+                        }
                     }
                 }
             }
