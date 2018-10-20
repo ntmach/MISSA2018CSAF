@@ -146,7 +146,7 @@
 
         function getAlbumPhotos (response){
             let albumphotos = '<h3>Photos</h3>'
-            var albumArray[];
+            var albumArray = [];
             FB.api('/me?fields=albums.data.id)', function(response){
                 if (response && !response.error) {
                     for(let i in album.data) {
