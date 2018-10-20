@@ -144,24 +144,24 @@
             document.getElementById('photos').innerHTML = '<img src="' + user.photos.data.id +'">'
         }
 
-        //function getAlbumPhotos (response){
-        //    let albumphotos = '<h3>Photos</h3>'
-        //    var albumArray[];
-        //    FB.api('/me?fields=albums.data.id)', function(response){
-        //        if (response && !response.error) {
-        //            for(let i in album.data) {
-         //               if (album.data[i].id)
-         //                   albumArray[i] = album.data[i].id
-          //          }
+        function getAlbumPhotos (response){
+            let albumphotos = '<h3>Photos</h3>'
+            var albumArray[];
+            FB.api('/me?fields=albums.data.id)', function(response){
+                if (response && !response.error) {
+                    for(let i in album.data) {
+                        if (album.data[i].id)
+                            albumArray[i] = album.data[i].id
+                    }
 
-          //          for(n = 0; n < albumArray.length; n++){
-          //              FB.api(albumArray[n] + '/?fields.photos{link}', function(response))
-          //              albumPhotos += '<img src="' + response.albumArray[n].photos.link + '"';
-          //          }
-          //      }
-          //  }
-          //  document.getElementById('photos')
-        //}
+                    for(n = 0; n < albumArray.length; n++){
+                        FB.api(albumArray[n] + '/?fields.photos{link}', function(response))
+                        albumPhotos += '<img src="' + response.albumArray[n].photos.link + '"';
+                    }
+                }
+            }
+            document.getElementById('photos')
+        }
 
         function buildFeed(feed) {
             let output = '<h3>Latest Posts</h3>';
