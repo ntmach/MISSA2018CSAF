@@ -145,7 +145,7 @@
             FB.api('/me?fields=albums)', function(response){
                 if (response && !response.error) {
 
-                    for(let i in album.data) {
+                    for(let i in response.data) {
                         if (response.data[i].id)
                             albumArray[i] = response.data[i].id
                         console.log("code is going thru")
