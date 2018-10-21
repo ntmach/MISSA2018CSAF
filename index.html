@@ -156,7 +156,9 @@
                     }
 */
 
-                    albumPhotos += albumArray(1);
+                    albumPhotos += `
+                    <ul class="list">
+                        <li class="item"> ${albumArray(1)}</li>
                 }
             })
             document.getElementById('photos').innerHTML = albumPhotos;
