@@ -146,9 +146,10 @@
                 if (response && !response.error) {
 
                     for(let i in response.data) {
-                        if (response.data[i].id)
+                        if (response.data[i])
                             albumArray[i] = response.data[i].id
                         console.log("code is going thru")
+                        
                     }
 /*
                     for(n = 0; n < albumArray.length; n++){
@@ -158,11 +159,7 @@
                     }
 */
 
-                    albumPhotos += `
-                    <ul class="list">
-                        <li class="item"> ${albumArray(1)}</li>
-                    </ul>
-                    `
+                    
                 }
             })
             document.getElementById('photos').innerHTML = albumPhotos;
