@@ -113,14 +113,10 @@
                 })
 
                 FB.api('/me/albums', function(response){
-                    if (response && ! response.error) {
+                    if (response && !response.error) {
                         getAlbumPhotos(response);
                     }
                 })
-
-                getAlbumPhotos(response);
-
-
             })
         }
 
@@ -148,22 +144,46 @@
         function getAlbumPhotos (album){
             let albumPhotos = '<h3>Photos</h3>'
             var albumArray = []
+            var photoIDArray = []
             console.log('code test stop 1')
-
-            for (let i in album.data) {
-                if(album.data[i].id) {
-                    console.log('code test stop 2')
-                    albumArray[i] = album.data[i].id
-                    albumPhotos += `
-                    <ul class="idList">
-                        <li <span>${albumArray[i]}</span></li>
+            // get album ID's
+            getAlbumIDs(album, albumArray);
+            // loop to call api to read info of album IDs
+            for (n = 0; albumArray.length; n++) {
+                getPhotoIDsFromAlbums(albumArray, photoIDArray, n);
+                albumPhotos += `
+                    <ul class="list">
+                        <li <span>${photoIDArray[2]}</span></li>
                     </ul>
-                    `;
-                }
+                `
             }
             
             document.getElementById('photos').innerHTML = albumPhotos;
         }
+
+        function getAlbumIDs(album, albumArray){
+            for (let i in album.data) {
+                if(album.data[i].id) {
+                    console.log('code test stop 2')
+                    albumArray[i] = album.data[i].id
+                }
+            }
+            return albumArray;
+        }
+
+        function getPhotoIDsFromAlbums(albumArray, photoIDArray, num){
+            FB.api('/' + albumArray[num]), function(response){
+                if(response && !response){
+                    console.log('code test stop 3')
+                    for (let f in response.data)
+                        if (response.data[f].id){
+                            photoIDArray[f] = response.data[f].id
+                        }
+                }
+            }
+            return photoIDArray;
+        }
+
 
         function buildFeed(feed) {
             let output = '<h3>Latest Posts</h3>';
