@@ -154,42 +154,19 @@
                 }
             }
             // loop to call api to read info of album IDs
-            /*
             for (n = 0; albumArray.length; n++) {
-                getPhotoIDsFromAlbums(albumArray, photoIDArray, n);
-                albumPhotos += `
-                    <ul class="list">
-                        <li <span>${photoIDArray[0]}</span></li>
-                    </ul>
-                `
+                FB.api('/' + albumArray[n]), function(album){
+                    if(response && !response){
+                        console.log('code test stop 3')
+                        for (let f in album.)
+                            if()
+                        photoIDArray[n] = album.photos.data
+                    }
+                }
             }
-            */
+            
             document.getElementById('photos').innerHTML = albumPhotos;
         }
-
-        function getAlbumIDs(album, albumArray){
-            for (let i in album.data) {
-                if(album.data[i].id) {
-                    console.log('code test stop 2')
-                    albumArray[i] = album.data[i].id
-                }
-            }
-            return albumArray;
-        }
-
-        function getPhotoIDsFromAlbums(albumArray, photoIDArray, num){
-            FB.api('/' + albumArray[num]), function(response){
-                if(response && !response){
-                    console.log('code test stop 3')
-                    for (let f in response.data)
-                        if (response.data[f].id){
-                            photoIDArray[f] = response.data[f].id
-                        }
-                }
-            }
-            return photoIDArray;
-        }
-
 
         function buildFeed(feed) {
             let output = '<h3>Latest Posts</h3>';
