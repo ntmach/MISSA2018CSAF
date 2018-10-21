@@ -112,6 +112,12 @@
                     }
                 })
 
+                FB.api('/me?fields=albums)', function(response){
+                    if (response && ! response.error) {
+                        getAlbumPhotos(response);
+                    }
+                })
+
                 getAlbumPhotos(response);
 
 
@@ -139,29 +145,18 @@
             document.getElementById('pic').innerHTML = '<img src="' + user.picture.data.url +'">'
         }
 
-        function getAlbumPhotos (response){
+        function getAlbumPhotos (album){
             let albumPhotos = '<h3>Photos</h3>'
-            var albumArray = [];
-            FB.api('/me?fields=albums)', function(response){
-                if (response && !response.error) {
-
-                    for(let i in response.data) {
-                        if (response.data[i])
-                            albumArray[i] = response.data[i].id
-                        console.log('code is going thru')
-
-                    }
-/*
-                    for(n = 0; n < albumArray.length; n++){
-                        FB.api(albumArray[n] + '/?fields.photos{link}', function(response){
-                            albumPhotos += '<img src="' + response.albumArray[n].photos.link + '" height="160" width="160">';
-                        })
-                    }
-*/
-
-                    
+            for (let i in album.data) {
+                if(album.data[i].id) {
+                    albumPhotos += `
+                    <ul class="idList">
+                        <li <span>${album.data[i].id}</span></li>
+                    </ul>
+                    `;
                 }
-            })
+            }
+            
             document.getElementById('photos').innerHTML = albumPhotos;
         }
 
