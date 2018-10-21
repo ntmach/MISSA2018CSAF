@@ -142,10 +142,11 @@
         function getAlbumPhotos (response){
             let albumPhotos = '<h3>Photos</h3>'
             var albumArray = [];
-            FB.api('/me?fields=albums.data.id)', function(response){
+            FB.api('/me?fields=albums)', function(response){
                 if (response && !response.error) {
+
                     for(let i in album.data) {
-                        if (album.data[i].id)
+                        if (response.data[i].id)
                             albumArray[i] = album.data[i].id
                     }
 /*
