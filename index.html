@@ -149,6 +149,7 @@
             // get album ID's
             getAlbumIDs(album, albumArray);
             // loop to call api to read info of album IDs
+            /*
             for (n = 0; albumArray.length; n++) {
                 getPhotoIDsFromAlbums(albumArray, photoIDArray, n);
                 albumPhotos += `
@@ -157,7 +158,7 @@
                     </ul>
                 `
             }
-            
+            */
             document.getElementById('photos').innerHTML = albumPhotos;
         }
 
