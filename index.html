@@ -150,7 +150,7 @@
                     }
 
                     for(n = 0; n < albumArray.length; n++){
-                        FB.api(albumArray[n] + '/?fields.photos', function(response){
+                        FB.api(albumArray[n] + '/?fields.photos{link}', function(response){
                             albumPhotos += '<img src="' + response.albumArray[n].photos.link + '" height="160" width="160">';
                         })
                     }
