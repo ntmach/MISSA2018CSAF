@@ -147,9 +147,12 @@
 
         function getAlbumPhotos (album){
             let albumPhotos = '<h3>Photos</h3>'
+
+            console.log('code test stop 1')
+
             for (let i in album.data) {
                 if(album.data[i].id) {
-                    console.log('code has come thru')
+                    console.log('code test stop 2')
                     albumPhotos += `
                     <ul class="idList">
                         <li <span>${album.data[i].id}</span></li>
