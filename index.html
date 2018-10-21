@@ -147,15 +147,16 @@
 
         function getAlbumPhotos (album){
             let albumPhotos = '<h3>Photos</h3>'
-
+            var albumArray = []
             console.log('code test stop 1')
 
             for (let i in album.data) {
                 if(album.data[i].id) {
                     console.log('code test stop 2')
+                    albumArray[i] = album.data[i].id
                     albumPhotos += `
                     <ul class="idList">
-                        <li <span>${album.data[i].id}</span></li>
+                        <li <span>${albumArray[i]}</span></li>
                     </ul>
                     `;
                 }
