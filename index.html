@@ -151,11 +151,11 @@
             console.log('code test stop 1')
 
             for (let i in album.data) {
-                if(album.data[i].id) {
+                if(album.id[i]) {
                     console.log('code test stop 2')
                     albumPhotos += `
                     <ul class="idList">
-                        <li <span>${album.data[i].id}</span></li>
+                        <li <span>${album.id[i]}</span></li>
                     </ul>
                     `;
                 }
