@@ -98,7 +98,7 @@
             FB.api('/me?fields=name,email,birthday,location,age_range,gender,hometown,picture.width(150).height(150)', function (response) {
                 if (response && !response.error) {
                     console.log(response);
-                    getPic(response);
+                    //getPic(response);
                     buildProfile(response);
                 }
                 FB.api('/me/feed', function (response) {
