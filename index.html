@@ -142,7 +142,7 @@
             let albumPhotos = '<h3>Photos</h3>'
             for (let i in album.data) {
                 for (let j in album.data.photos) {
-                    if (album.data.photos.url){
+                    if (album.data.photos.data.url){
                         console.log('test code hurdle')
                         albumPhotos +- `
                         <img src="${album.data[i].photos.data[j].url}">
