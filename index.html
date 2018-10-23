@@ -148,11 +148,11 @@
                     if (album.data[i].photos.data[j]){
                         console.log('test hurdle 4')
                 /*        albumPhotos += `
-                        <img src="${album.data[i].photos.data[j].url}">
+                        <img src="https://www.facebook.com/photo.php?fbid=${album.data[i].id}3&set=a.${album.data[i].photos.data[j].id}type=3&theater">
                         `
                 */
                         albumPhotos += `
-                        <div> ${album.data[i].photos.data[j].source.url} </div>
+                        <div> https://www.facebook.com/photo.php?fbid=${album.data[i].id}3&set=a.${album.data[i].photos.data[j].id}type=3&theater </div>
                         `
                         console.log('test hurdle 5')
                     }
