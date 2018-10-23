@@ -148,17 +148,17 @@
                     if (album.data[i].photos.data[j]){
                         console.log('test hurdle 4')
                
-                
+                /*
                         albumPhotos += `
                         <img src="https://www.facebook.com/photo.php?fbid=${album.data[i].id}&set=a.${album.data[i].photos.data[j].id}&type=3&theater" width="150" height="150">
                         `
-                 
-
-                /*        
-                        albumPhotos += `
-                        <img src="${album.data[i].photos.data[j].link}">
-                        `
                 */
+
+                        
+                        albumPhotos += `
+                        <img src="${album.data[i].photos.data[j].source}">
+                        `
+                
 
                         console.log('test hurdle 5')
                     }
