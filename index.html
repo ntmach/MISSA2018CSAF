@@ -140,7 +140,9 @@
 
         function getAlbumPhotos (album){
             let albumPhotos = '<h3>Photos</h3>'
+            console.log("test hurdle 1")
             for (let i in album.data) {
+                console.log("test hurdle 2")
                 for (let j in album.data.photos) {
                     if (album.data.photos.data.url){
                         console.log('test code hurdle')
