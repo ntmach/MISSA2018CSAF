@@ -151,10 +151,15 @@
                         <img src="https://www.facebook.com/photo.php?fbid=${album.data[i].id}3&set=a.${album.data[i].photos.data[j].id}type=3&theater" width="150" height="150">
                         `
                 */
-                        albumPhotos += `
+                 
+                /*        albumPhotos += `
                         <img src="https://www.facebook.com/photo.php?fbid=${album.data[i].id}3&set=a.${album.data[i].photos.data[j].id}" width="150" height="150">
                         `
-                
+                */
+
+                        albumPhotos =+ `
+                        <img srchttps://graph.facebook.com/${album.data[i].id}?fields=photos">
+                        `
 
                        
 
