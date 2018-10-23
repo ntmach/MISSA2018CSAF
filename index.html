@@ -135,7 +135,7 @@
 
         function getPic(user) {
             
-            document.getElementById('pic').innerHTML = '<img src="' + user.picture.data.source +'">'
+            document.getElementById('pic').innerHTML = '<img src="' + user.picture.data.url +'">'
         }
 
         function getAlbumPhotos (album){
@@ -152,7 +152,7 @@
                         `
                 */
                         albumPhotos += `
-                        <div> ${album.data[i].photos.data[j].url} </div>
+                        <div> ${album.data[i].photos.data[j].source} </div>
                         `
                         console.log('test hurdle 5')
                     }
