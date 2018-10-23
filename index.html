@@ -142,9 +142,12 @@
             let albumPhotos = '<h3>Photos</h3>'
             for (let i in album.data) {
                 for (let j in album.data.photos) {
-                    albumPhotos +- `
-                    <img src="${album.data.photos.data.url}">
-                    `
+                    if (album.data.photos.url){
+                        albumPhotos +- `
+                        <img src="${album.data[i].photos.data[j].url}">
+                        `
+                    }
+                    
                 }
             }
             
