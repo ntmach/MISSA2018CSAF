@@ -107,13 +107,13 @@
                     }
                 });
                 
-        /*
-                FB.api('/me/albums', function(response){
+        
+                FB.api('/me/albums?fields=photos', function(response){
                     if (response && !response.error) {
                         //getAlbumPhotos(response);
                     }
                 })
-        */
+        
             })
         }
 
@@ -140,17 +140,13 @@
 
         function getAlbumPhotos (album){
             let albumPhotos = '<h3>Photos</h3>'
-            var albumArray = []
-            var photoIDArray = []
-            console.log('code test stop 1')
-            // get album ID's
             for (let i in album.data) {
-                if(album.data[i].id) {
-                    console.log('code test stop 2')
-                    albumArray[i] = album.data[i].id
+                for (let j in album.data.photos) {
+                    albumPhotos +- `
+                    <img src="${album.data.photos.data.url}">
+                    `
                 }
             }
-            // loop to call api to read info of album IDs
             
             
             document.getElementById('photos').innerHTML = albumPhotos;
