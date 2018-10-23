@@ -143,11 +143,11 @@
             console.log("test hurdle 1")
             for (let i in album.data) {
                 console.log("test hurdle 2")
-                for (let j in album.data.photos.data) {
+                for (let j in album.data.photos) {
                     if (album.data.photos.data.url){
                         console.log('test code hurdle')
                         albumPhotos +- `
-                        <img src="${album.data[i].photos.data[j].url}">
+                        <img src="${album.data[i].photos[j].data.url}">
                         `
                     }
                     
