@@ -143,12 +143,12 @@
             console.log("test hurdle 1")
             for (let i in album.data) {
                 console.log("test hurdle 2")
-                for (let j in album.data[i].photos) {
+                for (let j in album.data.photos[i]) {
                     console.log("test hurdle 3")
-                    if (album.data[i].photos.data){
+                    if (album.data.photos[i].data[j]){
                         console.log('test hurdle 4')
                         albumPhotos += `
-                        <img src="${album.data[i].photos[j].data}">
+                        <img src="${album.data.photos[i].data[j].link}">
                         `
                     }
                     
