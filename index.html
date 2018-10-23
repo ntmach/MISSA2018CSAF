@@ -110,7 +110,7 @@
         
                 FB.api('/me/albums?fields=photos', function(response){
                     if (response && !response.error) {
-                        //getAlbumPhotos(response);
+                        getAlbumPhotos(response);
                     }
                 })
         
