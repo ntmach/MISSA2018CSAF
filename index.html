@@ -140,6 +140,7 @@
 
         function getAlbumPhotos (album){
             let albumPhotos = '<h3>Photos</h3>'
+            var temp
             console.log("test hurdle 1")
             for (let i in album.data) {
                 console.log("test hurdle 2")
@@ -154,9 +155,11 @@
                         `
                 */
 
-                        
+                        temp = album.data[i].photos.data[j].source
+
                         albumPhotos += `
-                        <img src="${album.data[i].photos.data[j].source}">
+
+                        <img src="${temp.toString}">
                         `
                 
 
