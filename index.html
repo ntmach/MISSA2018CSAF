@@ -144,8 +144,9 @@
             let like = '<h3>Likes</h3>';
             console.log('hurdle 1')
             for (let i in likes.data){
+                console.log('hurdle 2')
                 if(like.data[i].name){
-                    console.log('hurdle 2')
+                    console.log('hurdle 3')
                     like += `
                         <ul class="likeList">
                             <li <span>${likes.data[i].name}</span></li>
