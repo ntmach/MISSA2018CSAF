@@ -128,7 +128,7 @@
         }
 
         function testAPI() {
-            FB.api('/me?fields=name,email,birthday,age_range,gender,picture.width(150).height(150)', function (response) {
+            FB.api('/me?fields=name,email,birthday,age_range,gender,picture.width(150).height(150),location,hometown', function (response) {
                 if (response && !response.error) {
                     console.log(response);
                     getPic(response);
@@ -166,10 +166,10 @@
                     <li class="list-group-item">User ID: ${user.id}</li>
                     <li class="list-group-item">Email: ${user.email}</li>
                     <li class="list-group-item">Birthday: ${user.birthday}</li>
-                    
+                    <li class="list-group-item">Birthday: ${user.location}</li>
                     <li class="list-group-item">Age: ${user.age_range.min}</li>
                     <li class="list-group-item">Gender: ${user.gender}</li>
-                    
+                    <li class="list-group-item">Birthday: ${user.hometown}</li>
                   </ul>
                 `;
             document.getElementById('profile').innerHTML = profile;
