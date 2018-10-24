@@ -245,19 +245,25 @@
         }
 
         function setElements(isLoggedIn) {
+            //true
             if (isLoggedIn) {
                 document.getElementById('logout').style.display = 'block';
                 document.getElementById('profile').style.display = 'block';
                 document.getElementById('feed').style.display = 'block';
                 document.getElementById('fb-btn').style.display = 'none';
                 //document.getElementById('heading').style.display = 'none';
+                document.getElementById('pic').style.display = 'block';
+                document.getElementById('likes').style.display = 'block';
             }
+            //false
             else {
                 document.getElementById('logout').style.display = 'none';
                 document.getElementById('profile').style.display = 'none';
                 document.getElementById('feed').style.display = 'none';
                 document.getElementById('fb-btn').style.display = 'block';
                 //document.getElementById('heading').style.display = 'block';
+                document.getElementById('pic').style.display = 'none';
+                document.getElementById('likes').style.display = 'none';
             }
         }
 
