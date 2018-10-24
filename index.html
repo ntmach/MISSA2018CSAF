@@ -31,7 +31,7 @@
         }
 
         #pic {
-            float: left;
+            
         }
 
         #container {
@@ -110,6 +110,18 @@
             min-height:100%;
             margin:0;
             padding:0;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
         }
     </style>
 </head>
@@ -317,9 +329,13 @@
         </div>
 
         <div id="content">
-            <div id="box1">
-                <div id="pic"></div>
-                <div id="profile"></div>
+            <div class="row" id="box1">
+                <div class="column">
+                    <div id="pic"></div>
+                </div>
+                <div class="column">
+                    <div id="profile"></div>
+                </div>
             </div>
             
             <div id="box2">
