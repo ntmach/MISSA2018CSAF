@@ -143,9 +143,9 @@
         function buildLikeFeed(userLikes){
             let like = '<h3>Likes</h3>';
             console.log('hurdle 1')
-            for (let i in userLikes.data.name){
+            for (let i in userLikes.data){
                 console.log('hurdle 2')
-                if(userLikes.data.name[i]){
+                if(userLikes.data[i].name){
                     console.log('hurdle 3')
                     like += `
                         <ul class="likeList">
