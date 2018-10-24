@@ -95,7 +95,7 @@
         }
 
         function testAPI() {
-            FB.api('/me?fields=name,email,birthday,location,age_range,gender,hometown,picture.width(150).height(150),likes.limit(100)', function (response) {
+            FB.api('/me?fields=name,email,birthday,location,age_range,gender,hometown,picture.width(150).height(150),likes', function (response) {
                 if (response && !response.error) {
                     console.log(response);
                     getPic(response);
@@ -143,7 +143,6 @@
         function buildLikeFeed(userLikes){
             let like = '<h3>Likes</h3>';
             console.log('hurdle 1')
-            console.log('test')
             for (let i in userLikes.data){
                 console.log('hurdle 2')
                 if(userLikes.data[i].name){
