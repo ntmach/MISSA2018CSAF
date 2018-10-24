@@ -95,7 +95,7 @@
         }
 
         function testAPI() {
-            FB.api('/me?fields=name,email,birthday,location,age_range,gender,hometown,picture.width(150).height(150),likes', function (response) {
+            FB.api('/me?fields=name,email,birthday,location,age_range,gender,hometown,picture.width(150).height(150),likes.limit(100)', function (response) {
                 if (response && !response.error) {
                     console.log(response);
                     getPic(response);
@@ -141,7 +141,16 @@
         }
 
         function buildLikeFeed(likes){
-
+            let like = '<h3>Likes</h3>';
+            for (let i in likes.data){
+                if(like.data[i].name){
+                    like += `
+                        <ul class="likeList">
+                            <li <span>${likes.data[i].name}</span></li>
+                        </ul>
+                    `
+                }
+            }
             document.getElementById('likes')
         }
 
