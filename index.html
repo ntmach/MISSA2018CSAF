@@ -141,7 +141,7 @@
                     }
                 });
 
-                FB.api('/me?fields=likes', function(response) {
+                FB.api('/me?fields=likes.limit(300)', function(response) {
                     if (response && !response.error) {
                         buildLikeFeed(response);
                         console.log(response);
