@@ -9,6 +9,8 @@
             margin-left: auto;
             margin-right: auto;
             text-align: center;
+            padding-bottom: 20px;
+            padding-top: 10px;
         }
 
         #logout{
@@ -182,11 +184,11 @@
 
         function buildLikeFeed(userLikes){
             let like = '<h3>Likes</h3>';
-            console.log('hurdle 1')
+            //console.log('hurdle 1')
             for (let i in userLikes.likes.data){
-                console.log('hurdle 2')
+                //console.log('hurdle 2')
                 if(userLikes.likes.data[i].name){
-                    console.log('hurdle 3')
+                    //console.log('hurdle 3')
                     like += `
                         <ul class="likeList">
                             <li <span>${userLikes.likes.data[i].name}</span></li>
