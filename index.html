@@ -26,7 +26,7 @@
         }
 
         #container {
-            width: 800px;
+            width: 1200px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -182,10 +182,10 @@
                     <li class="list-group-item">User ID: ${user.id}</li>
                     <li class="list-group-item">Email: ${user.email}</li>
                     <li class="list-group-item">Birthday: ${user.birthday}</li>
-                    <li class="list-group-item">Location: ${user.location.name}</li>
                     <li class="list-group-item">Age: ${user.age_range.min}</li>
                     <li class="list-group-item">Gender: ${user.gender}</li>
                     <li class="list-group-item">Hometown: ${user.hometown.name}</li>
+                    <li class="list-group-item">Current Town: ${user.location.name}</li>
                   </ul>
                 `;
             document.getElementById('profile').innerHTML = profile;
