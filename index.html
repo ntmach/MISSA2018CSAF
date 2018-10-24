@@ -100,7 +100,7 @@
                     console.log(response);
                     getPic(response);
                     buildProfile(response);
-                    buildLikeFeed(response)
+                    buildLikeFeed(response);
                 }
                 FB.api('/me/feed', function (response) {
                     if (response && !response.error) {
