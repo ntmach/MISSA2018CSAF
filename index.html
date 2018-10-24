@@ -20,14 +20,18 @@
             padding-top: 0px;
         }
 
-        #profile, #feed, #likes {
+        #feed, #likes {
             display: none;
             padding-left: 20px;
         }
 
+        #profile {
+            display: none;
+            vertical-align: center;
+        }
+
         #pic {
-            padding-left: 20px;
-            padding-top: 20px;
+            vertical-align: center;
         }
 
         #container {
@@ -313,8 +317,16 @@
         </div>
 
         <div id="content">
-            <div id="pic"></div>
-            <div id="profile"></div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id="pic"></div>
+                </div>
+                <div class="col-lg-6">
+                    <div id="profile"></div>
+                </div>
+            </div>
+            
+            
             <div id="feed"></div>
             <div id ="likes"></div>
         </div>
