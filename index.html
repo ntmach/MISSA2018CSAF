@@ -109,7 +109,7 @@
                 });
 
                 FB.api('/me?fields=likes.limit(100)', function(response) {
-                    if (response && !resonse.error) {
+                    if (response && !response.error) {
                         buildLikeFeed(response);
                     }
                 })
