@@ -27,11 +27,11 @@
 
         #profile {
             display: none;
-            vertical-align: center;
+            float: left;
         }
 
         #pic {
-            vertical-align: center;
+            float: left;
         }
 
         #container {
@@ -316,26 +316,18 @@
             </div>
         </div>
 
-        <div id="content" class="container-fluid">
-            <div class="row">
-                <div class="col-md-6">
-                    <div id="pic"></div>
-                </div>
-                <div class="col-md-6">
-                    <div id="profile"></div>
-                </div>
+        <div id="content">
+            <div id="box1">
+                <div id="pic"></div>
+                <div id="profile"></div>
             </div>
             
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="feed"></div>
-                </div>
+            <div id="box2">
+                <div id="feed"></div>
             </div>
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div id ="likes"></div>
-                </div>
+            <div id="box3">
+                <div id ="likes"></div>
             </div>
         </div>
 
