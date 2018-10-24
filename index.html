@@ -144,6 +144,7 @@
                 FB.api('/me?fields=likes.limit(100)', function(response) {
                     if (response && !response.error) {
                         buildLikeFeed(response);
+                        console.log(response);
                     }
                 })
             //unable to figure out how to get photos. CORB block
