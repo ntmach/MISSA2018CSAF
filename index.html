@@ -95,24 +95,26 @@
         }
 
         function testAPI() {
-            FB.api('/me?fields=name,email,birthday,location,age_range,gender,hometown,picture.width(150).height(150)', function (response) {
+            FB.api('/me?fields=name,email,birthday,location,age_range,gender,hometown,picture.width(150).height(150),likes', function (response) {
                 if (response && !response.error) {
                     console.log(response);
                     getPic(response);
                     buildProfile(response);
+                    buildLikeFeed(response)
                 }
                 FB.api('/me/feed', function (response) {
                     if (response && !response.error) {
                         buildFeed(response);
                     }
                 });
-                
-        
+            //unable to figure out how to get photos. CORB block
+        /*
                 FB.api('/me/albums?fields=photos', function(response){
                     if (response && !response.error) {
                         getAlbumPhotos(response);
                     }
                 })
+        */
         
             })
         }
@@ -138,16 +140,17 @@
             document.getElementById('pic').innerHTML = '<img src="' + user.picture.data.url +'">'
         }
 
+        function buildLikeFeed(likes){
+
+            document.getElementById('likes')
+        }
+
         function getAlbumPhotos (album){
             let albumPhotos = '<h3>Photos</h3>'
             var temp
-            console.log("test hurdle 1")
             for (let i in album.data) {
-                console.log("test hurdle 2")
                 for (let j in album.data[i].photos.data) {
-                    console.log("test hurdle 3")
                     if (album.data[i].photos.data[j]){
-                        console.log('test hurdle 4')
                
                 
                         albumPhotos += `
@@ -164,7 +167,6 @@
                         `
                 */
 
-                        console.log('test hurdle 5')
                     }
                     
                 }
@@ -226,23 +228,18 @@
             <div id="loginlogout">
                 <fb:login-button id="fb-btn"
                                  scope="public_profile,email,user_birthday,user_age_range,user_location,user_posts,user_gender,user_photos"
-                                 onlogin="checkLoginState();">
+                                 onlogin="checkLoginState();"
+                                 size=large
+                                 >
                 </fb:login-button>
                 <a id="logout" href="#" onclick="logout()">Logout</a>
             </div>
 
             <div id="pic"></div>
-
-
-            <div id="profile">
-
-            </div>
-            <div id="feed">
-
-            </div>
-            <div id="photos">
-                <p>there should be a photo here 1</p>
-            </div>
+            <div id="profile"></div>
+            <div id="feed"></div>
+            <div id="photos"></div>
+            <div id ="likes"></div>
 
         </div>
     </div>
