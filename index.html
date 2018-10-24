@@ -140,11 +140,11 @@
             document.getElementById('pic').innerHTML = '<img src="' + user.picture.data.url +'">'
         }
 
-        function buildLikeFeed(likes){
+        function buildLikeFeed(userLikes){
             let like = '<h3>Likes</h3>';
             console.log('hurdle 1')
             console.log('test')
-            for (let i in likes.data){
+            for (let i in userlikes.data){
                 console.log('hurdle 2')
                 if(like.data[i].name){
                     console.log('hurdle 3')
