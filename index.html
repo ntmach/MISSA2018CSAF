@@ -281,10 +281,10 @@
                 if (feed.data[i].message) {
                     output += `
                       <ul class="well">
-                        <li <span><font size="+1">${feed.data[i].message}</font></span></li>
+                        <li <span><bold>Post:<font size="+1">${feed.data[i].message}</font></bold></span></li>
                       </ul>
                       <ul class="swell">
-                        <span>Created: ${feed.data[i].created_time}</span>
+                        <span><bold>Created</bold>: ${feed.data[i].created_time}</span>
                       </ul>
                     `;
                 }
@@ -333,7 +333,7 @@
                                  onlogin="checkLoginState();"
                                  size="large">
                 </fb:login-button>
-                <a id="logout" href="#" onclick="logout(),checkLoginState()"><font size="+2">Logout</font></a>
+                <a id="logout" href="#" onclick="logout(),checkLoginState()"><font size="+1">Logout</font></a>
                 </div>
             </div>
         </div>
