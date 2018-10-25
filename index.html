@@ -210,13 +210,13 @@
             let profile = `
                   <h3>${user.name}</h3>
                   <ul class="list-group">
-                    <li class="list-group-item"><font size="+2">User ID: ${user.id}</font></li>
-                    <li class="list-group-item"><font size="+2">Email: ${user.email}</font></li>
-                    <li class="list-group-item"><font size="+2">Birthday: ${user.birthday}</font></li>
-                    <li class="list-group-item">Age: ${user.age_range.min}</font></li>
-                    <li class="list-group-item"><font size="+2">Gender: ${user.gender}</font></li>
-                    <li class="list-group-item"><font size="+2">Hometown: ${user.hometown.name}</font></li>
-                    <li class="list-group-item"><font size="+2">Current Town: ${user.location.name}</font></li>
+                    <li class="list-group-item"><font size="+1">User ID: ${user.id}</font></li>
+                    <li class="list-group-item"><font size="+1">Email: ${user.email}</font></li>
+                    <li class="list-group-item"><font size="+1">Birthday: ${user.birthday}</font></li>
+                    <li class="list-group-item"><font size="+1">Age: ${user.age_range.min}</font></li>
+                    <li class="list-group-item"><font size="+1">Gender: ${user.gender}</font></li>
+                    <li class="list-group-item"><font size="+1">Hometown: ${user.hometown.name}</font></li>
+                    <li class="list-group-item"><font size="+1">Current Town: ${user.location.name}</font></li>
                   </ul>
                 `;
             document.getElementById('profile').innerHTML = profile;
@@ -236,7 +236,7 @@
                     //console.log('hurdle 3')
                     like += `
                         <ul class="likeList">
-                            <li <span><font size="+2">${userLikes.likes.data[i].name}</font></span></li>
+                            <li <span><font size="+1">${userLikes.likes.data[i].name}</font></span></li>
                         </ul>
                     `
                 }
@@ -281,7 +281,7 @@
                 if (feed.data[i].message) {
                     output += `
                       <ul class="well">
-                        <li <span><font size="+2">${feed.data[i].message}</font></span></li>
+                        <li <span><font size="+1">${feed.data[i].message}</font></span></li>
                       </ul>
                       <ul class="swell">
                         <span>Created: ${feed.data[i].created_time}</span>
