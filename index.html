@@ -124,16 +124,14 @@
 
         .column {
             float: left;
+            
+        }
+        .left {
             width: 50%;
         }
-
-        /* Clear floats after the columns */
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
+        .right {
+            width: 50%;
         }
-
         .sectioncontent1 {
             float left;
             width: 75%;
@@ -141,6 +139,12 @@
         .sectioncontent2 {
             float: left;
             width: 25%;
+        }
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
         }
     </style>
 </head>
@@ -349,10 +353,10 @@
 
         <div id="content">
             <div class="row" id="box1">
-                <div class="column">
+                <div class="column left">
                     <div id="profile"></div>
                 </div>
-                <div class="column">
+                <div class="column right">
                     <div id="pic"></div>
                 </div>
             </div>
@@ -367,10 +371,10 @@
             </div>
 
             <div class="row" id="preLogin">
-                <div class="sectioncontent1">
+                <div class="column sectioncontent1">
                     Article/Instructions
                 </div>
-                <div class="sectioncontent2">
+                <div class="column sectioncontent2">
                     Accounts and Passwords
                 </div>
             </div>
