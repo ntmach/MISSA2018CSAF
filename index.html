@@ -24,14 +24,12 @@
             display: none;
             padding-left: 150px;
            /* padding-right: 150px;*/
-           border: 1px black solid;
         }
 
         #likes {
             display: none;
             padding-left: 50px;
            /* padding-right: 150px;*/
-           border: 1px black solid;
         }
 
         #profile {
@@ -210,13 +208,13 @@
             let profile = `
                   <h3>${user.name}</h3>
                   <ul class="list-group">
-                    <li class="list-group-item">User ID: ${user.id}</li>
-                    <li class="list-group-item">Email: ${user.email}</li>
-                    <li class="list-group-item">Birthday: ${user.birthday}</li>
-                    <li class="list-group-item">Age: ${user.age_range.min}</li>
-                    <li class="list-group-item">Gender: ${user.gender}</li>
-                    <li class="list-group-item">Hometown: ${user.hometown.name}</li>
-                    <li class="list-group-item">Current Town: ${user.location.name}</li>
+                    <li class="list-group-item"><font size="+2">User ID: ${user.id}</font></li>
+                    <li class="list-group-item"><font size="+2">Email: ${user.email}</font></li>
+                    <li class="list-group-item"><font size="+2">Birthday: ${user.birthday}</font></li>
+                    <li class="list-group-item">Age: ${user.age_range.min}</font></li>
+                    <li class="list-group-item"><font size="+2">Gender: ${user.gender}</font></li>
+                    <li class="list-group-item"><font size="+2">Hometown: ${user.hometown.name}</font></li>
+                    <li class="list-group-item"><font size="+2">Current Town: ${user.location.name}</font></li>
                   </ul>
                 `;
             document.getElementById('profile').innerHTML = profile;
