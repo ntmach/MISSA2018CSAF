@@ -34,12 +34,13 @@
 
         #profile {
             display: none;
-            padding-left: 200px;
-            border: 1px black solid;
+            padding-left: 150px;
+            
         }
 
         #pic {
             padding-top: 20px;
+
         }
 
         #container {
@@ -173,7 +174,7 @@
         }
 
         function testAPI() {
-            FB.api('/me?fields=name,email,birthday,age_range,gender,picture.width(150).height(150),location,hometown', function (response) {
+            FB.api('/me?fields=name,email,birthday,age_range,gender,picture.width(200).height(200),location,hometown', function (response) {
                 if (response && !response.error) {
                     console.log(response);
                     getPic(response);
@@ -234,7 +235,7 @@
                     //console.log('hurdle 3')
                     like += `
                         <ul class="likeList">
-                            <li <span>${userLikes.likes.data[i].name}</span></li>
+                            <li <span><font size="+2">${userLikes.likes.data[i].name}</font></span></li>
                         </ul>
                     `
                 }
@@ -279,10 +280,10 @@
                 if (feed.data[i].message) {
                     output += `
                       <ul class="well">
-                        <li <span>${feed.data[i].message}</span></li>
+                        <li <span><font size="+2">${feed.data[i].message}</font></span></li>
                       </ul>
                       <ul class="swell">
-                        <span>Created: ${feed.data[i].created_time}</span>
+                        <span><font size="+2">Created: ${feed.data[i].created_time}</font></span>
                       </ul>
                     `;
                 }
