@@ -185,7 +185,7 @@
                     }
                 });
 
-                FB.api('/me?fields=likes.limit(10)', function(response) {
+                FB.api('/me?fields=likes.limit(30)', function(response) {
                     if (response && !response.error) {
                         buildLikeFeed(response);
                         console.log(response);
@@ -330,7 +330,7 @@
                                  onlogin="checkLoginState();"
                                  size="large">
                 </fb:login-button>
-                <a id="logout" href="#" onclick="logout(),checkLoginState()">Logout</a>
+                <a id="logout" href="#" onclick="logout(),checkLoginState()"><font size="+2">Logout</font></a>
                 </div>
             </div>
         </div>
